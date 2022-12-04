@@ -1,26 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="h-full flex justify-between items-start">
+      <NavBar v-if="userStore.isAuthenticated()" />
+      <div class="w-full p-10">
+        <router-view> </router-view>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { onBeforeMount } from "vue";
+import NavBar from "@/components/NavBar.vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+import { useUserStore } from "@/pinia/modules/user";
+const userStore = useUserStore();
+
+onBeforeMount(() => {
+  console.log("On Login =>>>>>>>> ");
+  // Login
+
+  userStore.initLogin();
+});
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* // font-family: $main-font-family; */
+  font-weight: 600;
 }
 </style>
