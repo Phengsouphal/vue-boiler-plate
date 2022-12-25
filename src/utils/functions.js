@@ -37,3 +37,8 @@ export const setSessionStorage = (key, value) => {
 export const getSessionStorage = (key) => {
     return window.JSON.parse(window.sessionStorage.getItem(key) || '[]')
 }
+
+
+export const requireImage = (link) => {
+    return new URL(`../assets/icons/${link}`, import.meta.url).href;
+};

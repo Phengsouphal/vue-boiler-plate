@@ -8,6 +8,8 @@ const HomePage = () => import('@/views/HomePage.vue')
 const SignUp = () => import('@/views/SignUp.vue')
 const FormSample = () => import('@/views/FormSample.vue')
 const NotFound = () => import('@/views/NotFound.vue')
+const Animation = () => import('@/views/Animation.vue')
+const PlantsUi = () => import('@/views/PlantsUi.vue')
 
 
 const routes = [
@@ -35,6 +37,18 @@ const routes = [
     name: 'test',
     meta: { requiresUnAuth: false },
     component: FormSample,
+  },
+  {
+    path: '/plant',
+    name: 'plant',
+    meta: { requiresUnAuth: false },
+    component: PlantsUi,
+  },
+  {
+    path: '/animation',
+    name: 'animation',
+    meta: { requiresUnAuth: false },
+    component: Animation,
   },
   { path: "/:notFound(.*)", component: NotFound },
 

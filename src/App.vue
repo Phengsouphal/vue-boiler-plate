@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <div class="h-full flex justify-between items-start">
+    <div class="h-full flex justify-between items-start relative">
       <NavBar v-if="userStore.isAuthenticated()" />
-      <div class="w-full p-10">
+      <div class="w-full p-10 h-full">
         <router-view> </router-view>
       </div>
+
+      <!-- <Buttonddd :identt="'kki'"></Buttonddd>
+      <Buttonddd :identt="'kkwi'"></Buttonddd>
+      <Buttonddd :identt="'kk22wi'"></Buttonddd>
+
+      <Buttonddd :identt="'kkwei'"></Buttonddd>
+      <Buttonddd :identt="'kk22weei'"></Buttonddd> -->
     </div>
   </div>
 </template>
@@ -12,6 +19,7 @@
 <script setup>
 import { onBeforeMount } from "vue";
 import NavBar from "@/components/NavBar.vue";
+import Buttonddd from "@/components/Buttonddd.vue";
 
 import { useUserStore } from "@/pinia/modules/user";
 const userStore = useUserStore();

@@ -39,7 +39,9 @@
         </template>
         <template #title>Navigation One</template>
         <a-menu-item key="5" @click="nextPage('/test')">Option 5</a-menu-item>
-        <a-menu-item key="6">Option 6</a-menu-item>
+        <a-menu-item key="6" @click="nextPage('/animation')"
+          >Option 6</a-menu-item
+        >
         <a-menu-item key="7">Option 7</a-menu-item>
         <a-menu-item key="8">Option 8</a-menu-item>
       </a-sub-menu>

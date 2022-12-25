@@ -23,21 +23,30 @@ import {
     Switch,
     Select,
     Checkbox,
-    Popconfirm
+    Popconfirm,
+    Modal,
+    Dropdown,
+    Carousel,
+    Upload
 } from 'ant-design-vue';
 import "ant-design-vue/dist/antd.css";
 
 import '@/assets/styles/tailwind.css';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const logd = console.log;
 console.log = (...agrs) => {
     if (process.env.NODE_ENV != "development") return;
     logd(...agrs);
 };
+import Carousel3d from 'vue3-carousel-3d';
+import "vue3-carousel-3d/dist/index.css"
 
 const app = createApp(App)
+app.use(Carousel3d);
 
+AOS.init();
 // Axios
 // app.config.globalProperties.$http = axios
 app.config.globalProperties.post = post
@@ -60,6 +69,13 @@ app.use(Switch)
 app.use(Select)
 app.use(Checkbox)
 app.use(Popconfirm)
+app.use(Modal)
+app.use(Dropdown)
+app.use(Carousel)
+app.use(Upload)
+
+
+
 
 
 

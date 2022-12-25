@@ -1,4 +1,4 @@
-import { getUserInfo, login } from "@/api/user";
+import { addTransactionApi, getUserInfo, login } from "@/api/user";
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/utils/functions";
 import { message } from "ant-design-vue";
 import { defineStore } from "pinia";
@@ -109,6 +109,20 @@ export const useUserStore = defineStore("user", () => {
     // }
   };
 
+  const addTransaction = async (data) => {
+    try {
+      const res = await addTransactionApi(data);
+      console.log('AddTransaction =============', res)
+      if (res) {
+        return res;
+      } else if (res?.errors) {
+        return null;
+      }
+
+    } catch (e) {
+    }
+  };
+
   const logout = () => {
     console.log('Log out ')
     removeLocalStorage('token')
@@ -125,6 +139,7 @@ export const useUserStore = defineStore("user", () => {
   }
 
 
+
   watch(userToken, () => {
     setLocalStorage("token", userToken.value);
   });
@@ -139,6 +154,7 @@ export const useUserStore = defineStore("user", () => {
     getUserBalance,
     loginTTTT,
     logout,
-    isAuthenticated
+    isAuthenticated,
+    addTransaction
   };
 });
