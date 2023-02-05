@@ -53,6 +53,7 @@ export const useUserStore = defineStore("user", () => {
   /* 登录*/
   const LoginIn = async (data) => {
     try {
+
       const res = await login(data);
       console.log('Try to Login ===> ', res)
 
@@ -83,6 +84,8 @@ export const useUserStore = defineStore("user", () => {
       //   return { code: 0 };
       // }
     } catch (e) {
+      console.log('=============', e)
+
       // return { code: -1, message: e?.message };
     }
   };

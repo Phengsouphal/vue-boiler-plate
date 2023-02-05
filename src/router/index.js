@@ -80,7 +80,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !userStore.isAuthenticated()) {
 
     console.log(to.meta.requiresAuth, '====== posts posts :::', userStore.isAuthenticated());
-    next("/signup");
+    next("/plant");
 
   } else if (to.meta.requiresUnAuth && userStore.isAuthenticated()) {
 

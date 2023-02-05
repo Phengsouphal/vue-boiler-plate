@@ -24,10 +24,12 @@ import {
     Select,
     Checkbox,
     Popconfirm,
+    Tabs,
     Modal,
     Dropdown,
     Carousel,
-    Upload
+    Upload,
+    Rate
 } from 'ant-design-vue';
 import "ant-design-vue/dist/antd.css";
 
@@ -59,6 +61,7 @@ app.use(PageHeader)
 
 app.use(Table)
 app.use(Tag)
+app.use(Tabs)
 app.use(TableColumn)
 app.use(Form)
 app.use(FormItem)
@@ -69,6 +72,7 @@ app.use(Switch)
 app.use(Select)
 app.use(Checkbox)
 app.use(Popconfirm)
+app.use(Rate)
 app.use(Modal)
 app.use(Dropdown)
 app.use(Carousel)

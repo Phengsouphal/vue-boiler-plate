@@ -1,6 +1,6 @@
 <template>
-  <div id="PlantsUI">
-    <div class="m-auto w-full">
+  <div id="PlantsUI" class="h-full overflow-y-scroll">
+    <div class="m-auto w-full px-4 container">
       <!-- Top Header -->
       <div class="flex justify-between items-center py-3">
         <p>Free Delivery: Take advantage of our time to save event</p>
@@ -189,6 +189,169 @@
       </div>
 
       <ShippingArea></ShippingArea>
+      <div class="w-full flex items-center justify-between gap-4 mt-4">
+        <div class="w-1/2 h-64 bg-red-200 relative">
+          <img
+            class="w-full h-full absolute"
+            :src="require('@/assets/images/slider1.webp')"
+          />
+          <div
+            class="absolute top-12 left-5 w-1/3 flex flex-col justify-start items-start"
+          >
+            <p class="text-xl font-light">Big Sale Products</p>
+            <p class="text-4xl">Plants For Interior</p>
+            <p class="pb-1 border-b-2 border-green-500 mt-6">SHOP NOW</p>
+          </div>
+        </div>
+        <div class="w-1/2 h-64 bg-red-200 relative">
+          <img
+            class="w-full h-full absolute"
+            :src="require('@/assets/images/slider2.webp')"
+          />
+          <div
+            class="absolute top-12 left-5 w-1/3 flex flex-col justify-start items-start"
+          >
+            <p class="text-xl font-light">Top Products</p>
+            <p class="text-4xl">Plants For Healthy</p>
+            <p class="pb-1 border-b-2 border-green-500 mt-6">SHOP NOW</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full flex flex-col items-center justify-center py-4">
+        <p class="text-3xl">Our Products</p>
+        <div class="w-28 h-0.5 mt-2 bg-slate-500" />
+      </div>
+
+      <a-tabs v-model:activeKey="data.activeKey" centered>
+        <a-tab-pane key="1" tab="Plant Stands & Movers">
+          <div class="grid grid-cols-4 gap-10">
+            <CardItem :image="require('@/assets/images/product8.webp')" />
+            <CardItem :image="require('@/assets/images/product7.webp')" />
+            <CardItem :image="require('@/assets/images/product1.webp')" />
+            <CardItem :image="require('@/assets/images/product4.webp')" />
+            <CardItem :image="require('@/assets/images/product7.webp')" />
+            <CardItem :image="require('@/assets/images/product8.webp')" />
+            <CardItem :image="require('@/assets/images/product1.webp')" />
+            <CardItem :image="require('@/assets/images/product4.webp')" />
+          </div>
+        </a-tab-pane>
+        <a-tab-pane key="2" tab="Plant families" force-render>
+          <div class="grid grid-cols-4 gap-10">
+            <CardItem :image="require('@/assets/images/product4.webp')" />
+            <CardItem :image="require('@/assets/images/product7.webp')" />
+            <CardItem :image="require('@/assets/images/product1.webp')" />
+            <CardItem :image="require('@/assets/images/product8.webp')" />
+            <CardItem :image="require('@/assets/images/product4.webp')" />
+            <CardItem :image="require('@/assets/images/product8.webp')" />
+            <CardItem :image="require('@/assets/images/product1.webp')" />
+            <CardItem :image="require('@/assets/images/product7.webp')" />
+          </div>
+        </a-tab-pane>
+        <a-tab-pane key="3" tab="Outdoor Plant Pots">
+          <div class="grid grid-cols-4 gap-10">
+            <CardItem :image="require('@/assets/images/product1.webp')" />
+            <CardItem :image="require('@/assets/images/product4.webp')" />
+            <CardItem :image="require('@/assets/images/product7.webp')" />
+            <CardItem :image="require('@/assets/images/product8.webp')" />
+            <CardItem :image="require('@/assets/images/product1.webp')" />
+            <CardItem :image="require('@/assets/images/product7.webp')" />
+            <CardItem :image="require('@/assets/images/product8.webp')" />
+            <CardItem :image="require('@/assets/images/product4.webp')" /></div
+        ></a-tab-pane>
+      </a-tabs>
+
+      <div class="w-full flex flex-col items-center justify-center py-10">
+        <p class="text-3xl">What Our Customers Says ?</p>
+        <div class="w-28 h-0.5 mt-2 bg-slate-500" />
+      </div>
+
+      <FeedBackCarousel />
+
+      <div class="bg-[#f2f5f1] w-full py-8">
+        <div class="w-full flex flex-col items-center justify-center py-10">
+          <p class="text-3xl">Our Latest Posts</p>
+          <div class="w-28 h-0.5 mt-2 bg-slate-500" />
+        </div>
+
+        <LatestPost />
+      </div>
+
+      <div class="flex gap-6 justify-center items-start py-8">
+        <div>
+          <div>OPENING TIME</div>
+          <div class="w-20 h-[2px] mt-2 bg-slate-500"></div>
+
+          <p class="font-light mt-2">Mon - Fri: 8AM - 10PM</p>
+          <p class="font-light mt-2">Sat: 9AM - 8PM</p>
+          <p class="font-light mt-2">Suns: 14PM - 18PM</p>
+          <p class="mt-4">We Work All The</p>
+          <p class="mt-2">Holidays</p>
+        </div>
+        <div>
+          <div>INFORMATION</div>
+          <div class="w-20 h-[2px] mt-2 bg-slate-500"></div>
+          <p :class="textFooterStyle">About Us</p>
+          <p :class="textFooterStyle">Checkout</p>
+          <p :class="textFooterStyle">Frequently Questions</p>
+          <p :class="textFooterStyle">Wishlist</p>
+        </div>
+        <div class="w-2/6">
+          <p class="text-3xl font-extrabold w-full text-center">LUKANI</p>
+          <div class="w-full mt-4 gap-2 flex justify-between items-center">
+            <p>Payment</p>
+            <p>Affiliates</p>
+            <p>Contact</p>
+            <p>Internet</p>
+          </div>
+          <div class="w-full mt-4 gap-4 flex justify-center items-center">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-slate-300 group hover:bg-green-400 rounded-full"
+            >
+              <GoogleOutlined
+                class="text-xl leading-3 group-hover:text-white"
+              />
+            </div>
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-slate-300 group hover:bg-green-400 rounded-full"
+            >
+              <FacebookOutlined
+                class="text-xl leading-3 group-hover:text-white"
+              />
+            </div>
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-slate-300 group hover:bg-green-400 rounded-full"
+            >
+              <TwitterOutlined
+                class="text-xl leading-3 group-hover:text-white"
+              />
+            </div>
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-slate-300 group hover:bg-green-400 rounded-full"
+            >
+              <YoutubeOutlined
+                class="text-xl leading-3 group-hover:text-white"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>MY ACCOUNT</div>
+          <div class="w-20 h-[2px] mt-2 bg-slate-500"></div>
+          <p :class="textFooterStyle">My Account</p>
+          <p :class="textFooterStyle">Contact</p>
+          <p :class="textFooterStyle">Shopping Cart</p>
+          <p :class="textFooterStyle">Order History</p>
+        </div>
+        <div>
+          <div>CUSTOMER SERVICE</div>
+          <div class="w-20 h-[2px] mt-2 bg-slate-500"></div>
+          <p :class="textFooterStyle">Contact Us</p>
+          <p :class="textFooterStyle">Terms of use</p>
+          <p :class="textFooterStyle">Privacy Policy</p>
+          <p :class="textFooterStyle">Return</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -202,11 +365,18 @@ import {
   DownOutlined,
   HeartOutlined,
   LeftOutlined,
+  EyeOutlined,
   RightOutlined,
   SearchOutlined,
   SettingOutlined,
+  ControlOutlined,
   ShoppingOutlined,
   TeamOutlined,
+  LeftCircleOutlined,
+  GoogleOutlined,
+  TwitterOutlined,
+  YoutubeOutlined,
+  FacebookOutlined,
 } from "@ant-design/icons-vue";
 import {
   reactive,
@@ -218,8 +388,13 @@ import {
   watch,
 } from "vue";
 import { useRouter } from "vue-router";
+import CardItem from "@/components/CardItem.vue";
+import FeedBackCarousel from "@/components/FeedBackCarousel.vue";
+import LatestPost from "@/components/LatestPost.vue";
 const userStore = useUserStore();
 const router = useRouter();
+
+const textFooterStyle = "font-light mt-2 hover:text-green-500";
 
 /*
  *
@@ -228,6 +403,7 @@ const router = useRouter();
  */
 const data = reactive({
   isShow: false,
+  activeKey: "1",
 });
 
 onBeforeMount(() => {});
@@ -327,5 +503,15 @@ defineExpose({});
 }
 .slide-leave-to {
   transform: scaleY(0);
+}
+
+#PlantsUI :deep(.ant-tabs-top > .ant-tabs-nav::before) {
+  border: none;
+}
+
+#PlantsUI :deep(.ant-tabs-tab) {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
 }
 </style>

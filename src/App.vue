@@ -2,7 +2,7 @@
   <div id="app">
     <div class="h-full flex justify-between items-start relative">
       <NavBar v-if="userStore.isAuthenticated()" />
-      <div class="w-full p-10 h-full">
+      <div class="w-full h-full">
         <router-view> </router-view>
       </div>
 
